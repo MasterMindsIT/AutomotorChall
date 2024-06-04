@@ -39,15 +39,13 @@ public class LibroVenta {
             File directorio = new File("src/ficheros");
 
             if (!directorio.exists()) {
-                if (directorio.mkdirs()) {
-                    System.out.println("Directorio creado exitosamente!");
-                }
+                directorio.mkdirs();
             }
 
             File Fichero = new File(directorio.getAbsoluteFile() + "/" + nombreVenta+ ".txt");
             try {
-                if (Fichero.createNewFile()) {
-                    System.out.println("Archivo creado");
+                if (!Fichero.exists()) {
+                    Fichero.createNewFile();
                 }
                 FileWriter fw = new FileWriter(Fichero, true);
                 BufferedWriter bw = new BufferedWriter(fw);

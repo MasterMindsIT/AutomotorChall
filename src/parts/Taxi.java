@@ -19,8 +19,11 @@ public class Taxi extends Vehiculo {
 		this.valorPasaje = valorPasaje;
 	}
 
-	 public void pagarPasaje() {
-		 System.out.println("Pasaje pagado");
-	 }
+	public int pagarPasaje(int monto){
+		if (monto >= valorPasaje){
+			return valorPasaje - monto;
+		}
+		return monto;
+	}
 	
 }

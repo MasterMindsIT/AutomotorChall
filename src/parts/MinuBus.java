@@ -20,8 +20,13 @@ public class MinuBus extends Bus {
 	}
 
 
-    public void imprimeBus() {
-		System.out.println("Pasaje impreso");
-    }
+	@Override
+	public String toString() {
+		return "Bus{" +
+				"tipo de viaje=" + getTipoViaje() +
+				"color=" + getColor() +
+				"patentes=" + getPatente() +
+				'}';
+	}
 
 }

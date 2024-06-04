@@ -20,8 +20,11 @@ public class Bus extends Vehiculo {
 	}
 
 
-	public int asientosDisponibles() {
-		return  getCantidadDeAsientos();
+	public int asientosDisponibles(int asientosUtilizados){
+		if (asientosUtilizados <= cantidadDeAsientos){
+			return cantidadDeAsientos - asientosUtilizados;
+		}
+		return 0;
 	}
 
 }
